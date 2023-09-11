@@ -15,7 +15,7 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@sap/ux-specification": "^1.102.26",
+    "@sap/ux-specification": "^1.108.13",
     "sqlite3": "^5.0.4"
   },
   "scripts": {
