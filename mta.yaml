@@ -58,16 +58,27 @@ resources:
       service-plan: application
       path: ./xs-security.json
       config:
-        xsappname: risk-management
+        xsappname: risk-management-${org}-${space}
         tenant-mode: dedicated
+        role-collections:
+          - name: 'RiskManager-${space}'
+            description: Manage Risks
+            role-template-references:
+              - $XSAPPNAME.RiskManager
+          - name: 'RiskViewer-${space}'
+            description: View Risks
+            role-template-references:
+              - $XSAPPNAME.RiskViewer
         oauth2-configuration:
           redirect-uris:
             - http*://*.cfapps.us10-001.hana.ondemand.com/**
+
   - name: risk-management-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
+
   - name: risk-management-destination
     type: org.cloudfoundry.managed-service
     parameters:

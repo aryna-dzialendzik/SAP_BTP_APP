@@ -131,9 +131,6 @@
     },
     "txt": {
       "plugin_name": "com.sap.hana.di.copyonly"
-    },
-    "hdbcds": {
-      "plugin_name": "com.sap.hana.di.cds"
     }
   }
 }

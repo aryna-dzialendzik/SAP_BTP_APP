@@ -58,16 +58,26 @@
     },
     "requires": {
       "API_BUSINESS_PARTNER": {
-        "kind": "odata",
+        "kind": "odata-v2",
+        "tenant-mode": "dedicated",
         "model": "srv/external/API_BUSINESS_PARTNER",
         "credentials": {
           "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
+        },
+        "[production]": {
+          "credentials": {
+            "destination": "dest_BP"
+          }
+        },
+        "[hybrid]": {
+          "credentials": {
+            "destination": "dest_BP"
+          }
         }
       },
       "[production]": {
         "db": "hana",
-        "auth": "xsuaa",
-        "kind": "hana"
+        "auth": "xsuaa"
       }
     }
   },
