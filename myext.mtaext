@@ -1,0 +1,25 @@
+_schema-version: '3.1'
+ID: risk-management-dest  
+extends: risk-management
+
+modules:
+  - name: risk-management
+    parameters:
+      disk-quota: 512M
+      memory: 512M
+
+resources:
+  - name: my-destination
+    parameters:
+      config:
+        HTML5Runtime_enabled: true
+        init_data: 
+          instance:
+            destinations:
+            - Authentication: NoAuthentication
+              Name: API_BUSINESS_PARTNER
+              ProxyType: Internet
+              Type: HTTP 
+              URL: https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/
+            exciting_destination_policy: update
+        version: 1.0.0  

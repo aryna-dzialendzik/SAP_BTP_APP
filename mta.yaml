@@ -84,3 +84,10 @@ resources:
     parameters:
       service: destination
       service-plan: lite
+
+  - name: my-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      service-name: my-service-name
